@@ -12,7 +12,8 @@ var redirectUri = "http://localhost:3000/authorize";
 // The scopes the app requires
 var scopes = [ "openid",
     "https://outlook.office.com/mail.read",
-    "https://outlook.office.com/contacts.read"
+    "https://outlook.office.com/contacts.read",
+    "offline_access"
     ];
 
 function getAuthUrl() {
@@ -24,7 +25,7 @@ function getAuthUrl() {
     return returnVal;
 }
 
-function getTokenFromCode(auth_code, callback, response) {
+function getTokenFromCode(auth_code, callback, response, req) {
     var token;
     oauth2.authCode.getToken({
         code: auth_code,
@@ -38,7 +39,7 @@ function getTokenFromCode(auth_code, callback, response) {
         else {
             token = oauth2.accessToken.create(result);
             console.log("Token created: ", token.token);
-            callback(response, null, token);
+            callback(req, response, null, token);
         }
     });
 }
@@ -60,6 +61,21 @@ function getEmailFromIdToken(id_token) {
     return jwt.preferred_username
 }
 
+function getTokenFromRefreshToken(refresh_token, callback, request, response) {
+    var token = oauth2.accessToken.create({ refresh_token: refresh_token, expires_in: 0});
+    token.refresh(function(error, result) {
+        if (error) {
+            console.log('Refresh token error: ', error.message);
+            callback(request, response, error, null);
+        }
+        else {
+            console.log('New token: ', result.token);
+            callback(request, response, null, result);
+        }
+    });
+}
+
 exports.getEmailFromIdToken = getEmailFromIdToken;
 exports.getAuthUrl = getAuthUrl;
 exports.getTokenFromCode = getTokenFromCode;
+exports.getTokenFromRefreshToken = getTokenFromRefreshToken;
