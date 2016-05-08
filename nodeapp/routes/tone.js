@@ -4,6 +4,7 @@
 var express = require('express');
 var router = express.Router();
 var watson = require('watson-developer-cloud');
+var _ = require('lodash-node');
 
 var tone_analyzer = watson.tone_analyzer({
     url: "https://gateway.watsonplatform.net/tone-analyzer-beta/api",
@@ -17,6 +18,11 @@ var tone_analyzer = watson.tone_analyzer({
 router.get('/', function(req, res, next) {
     tone_analyzer.tone({ text: req.query.text },
         function(err, tone) {
+            _.map(function(ele) {
+                ele.tones.sort(function(a, b) {
+                    return a.score - b.score;
+                });
+            }, tone["document_tone"]["tone_categories"]);
             if (err)
             {
                 console.log(err);
