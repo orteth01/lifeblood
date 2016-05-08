@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('o365-nodejs-unified-api-connect:server');
+var debug = require('debug')('TechCrunchHackathon:server');
 var http = require('http');
 
 /**

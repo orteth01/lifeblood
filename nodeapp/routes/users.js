@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var authHelper = require("./authHelper");
 
-
-/* GET home page. */
+/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', authHelper: authHelper });
+  res.send('respond with a resource');
 });
 
 module.exports = router;
