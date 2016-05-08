@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var auth = require('./routes/authorize.js');
 var mail = require('./routes/mail.js');
 var tone = require('./routes/tone.js');
+var hmh = require('./routes/hmh.js');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/users', users);
 app.use('/authorize', auth);
 app.use('/mail', mail);
 app.use('/tone', tone);
+app.use('/hmh', hmh);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
