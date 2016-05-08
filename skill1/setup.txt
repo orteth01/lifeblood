@@ -1,0 +1,21 @@
+Intent Definitions:
+{
+    "intents": [
+        {
+            "intent": "Email"
+        }
+    ]
+}
+
+Utterances:
+Email Do I have any new email
+Email Do I have any new emails
+Email Do I have any unread email
+Email Do I have any unread emails
+Email Do I have any email
+Email Do I have any emails
+Email Are there any new emails
+Email What emails do I have
+Email Check my email
+Email What is an email
+Email Suck my balls
