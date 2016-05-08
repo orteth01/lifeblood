@@ -11,12 +11,8 @@ module.exports.states = {
     TEN: 10,
 };
 
-// module.exports.baseApiUrl = 'http://pathToDavids.club';
-// module.exports.email = '/email';
-// module.exports.watson = '/watson';
-// module.exports.statusUpdate = '/status/udpate';
-module.exports.baseApiUrl = 'http://matt.dule.one/';
-module.exports.email = '';
-module.exports.watson = '';
+module.exports.baseApiUrl = 'http://holoassist.club:3000';
+module.exports.email = '/mail';
+module.exports.watson = '/tone/top?text=';
 
 module.exports.statusUpdate = '';

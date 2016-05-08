@@ -3,12 +3,7 @@ var request = require('request');
 var utils = require('../utils');
 
 module.exports = function (intent, session, response) {
-     console.log("\n!!!!!!!!!!\n!!!!!!!!!! EMAIL INTENT\n!!!!!!!!!!");
-    if (session.attributes.state !== utils.ONE) {
-        // lol we broke it.
-        return response.tell('how did you get here? Borked.');
-    }
-
+    console.log("\n!!!!!!!!!!\n!!!!!!!!!! EMAIL INTENT\n!!!!!!!!!!");
     var watsonCallback = function (err, resp,  body) {
         if (err) {
             console.log('lol gtfo');
@@ -24,9 +19,9 @@ module.exports = function (intent, session, response) {
 
         var newSession = _.assign({}, session);
 
-        text += 'You have an email on Outlook from your mother. ';
+        text += 'You have an email in Outlook, from your mother. ';
         text += 'She sounds mad. ';
-        text += '“Why are you at a hackathon on Mother’s Day!? ';
+        text += '"Teddy, Why are you at a hackathon on Mother’s Day!? ';
         text += 'You’re a terrible son!”';
 
         response._session = newSession;
@@ -51,9 +46,8 @@ module.exports = function (intent, session, response) {
         var data = JSON.parse(body);
 
         var options = {
-            method: 'POST',
-            url: utils.baseApiUrl + utils.watson,
-            form: data,
+            method: 'GET',
+            url: utils.baseApiUrl + utils.watson + data.body,
         }
         request(options, watsonCallback);
     };
@@ -69,13 +63,13 @@ module.exports = function (intent, session, response) {
     var repromptText = "";
     var heading = "";
     var tell = false;
-    var withCard = true;
+    var withCard = false;
 
     var newSession = _.assign({}, session);
 
-    text += 'You have an email on Outlook from your mother. ';
-    text += 'She sounds mad. ';
-    text += '“Why are you at a hackathon on Mother’s Day!? ';
+    text += 'You have an email in Outlook from your mother. ';
+    text += 'She sounds mad. It reads: ';
+    text += '“Teddy, Why are you at a hackathon on Mother’s Day!? ';
     text += 'You’re a terrible son!”';
 
     response._session = newSession;

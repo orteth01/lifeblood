@@ -2,6 +2,7 @@ var AlexaSkill = require('./utils/AlexaSkill');
 var APP_ID = 'amzn1.echo-sdk-ams.app.ae351af2-5ab1-478a-b26e-e7cb71070bdf';
 
 //Custom Intents
+var handleBuyIntent = require('./intents/buyIntent');
 
 // Amazon Intent Overrides
 
@@ -18,6 +19,7 @@ LifeBlood.prototype.constructor = LifeBlood;
 LifeBlood.prototype.eventHandlers.onLaunch = events.onLaunch;
 
 LifeBlood.prototype.intentHandlers = {
+    Buy: handleBuyIntent
 };
 
 

@@ -1,3 +1,17 @@
 Intent Definitions:
+{
+    "intents": [
+        {
+            "intent": "Buy"
+            "slots": [
+                {
+                    "name": "receipient",
+                    "type": "CONTACT"
+                }
+            ]
+        }
+    ]
+}
 
 Utterances:
+Buy for {receipient}

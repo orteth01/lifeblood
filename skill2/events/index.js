@@ -14,31 +14,11 @@ function onLaunch (launchRequest, session, response) {
     var newSession = {
         state: utils.states.ONE,
     }
-    var options = {
-        url: utils.baseApiUrl + utils.content,
-        form: newSession,
-    }
 
-    request.post(options, function(err, resp, body) {
-        if (err) {
-            console.log('!!!!!!!!!!\n!!!!!!!!!!ERROR IN onLaunch\n!!!!!!!!!!\n', err);
-        }
-        // don't do shit.
-        var output = '';
-        var reprompt = '';
-
-        var title = body.title;
-
-        // output += 'Tomorrow, you are reading ' + title  + '.';
-        output += 'Tomorrow, you are reading Heads or Tails by Bill Holt.';
-        response._session = newSession;
-
-        return response.tell(output);
-    });
     var output = '';
     var reprompt = '';
 
-    output += 'Tomorrow, you are reading Heads or Tails by Bill Holt.';
+    output += 'I hear the kids are doing this dance nowadays.';
     response._session = newSession;
 
     return response.tell(output);

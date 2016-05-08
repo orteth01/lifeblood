@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HoloAssist - The HoloBot Api Engine</title>
+    <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css" />
+    <style>
+        body {
+          font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+
+        a {
+          color: #00B7FF;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: bolder;
+            margin-bottom: .5em;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0.5em 0 0.25em 0;
+        }
+
+        h1 small {
+            display: block;
+            font-size: .25em;
+            margin: -0.5em 0 0 1em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 0.5em 0 0.10em 0;
+        }
+        .content {
+            position: relative; 
+            width: 100%;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 50em;
+        }
+        dd {
+            margin-left: 3em;
+        }
+        pre {
+            display: inline-block;
+            font-family: monospace;
+            background: #dedede;
+        }
+        pre a {
+            color: #111111;
+        }
+
+        pre a:hover {
+            color: #00B7FF;
+        }
+        .footer {
+            margin-top: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <h1>
+                HoloBots
+                <small>Powered By HoloAssit.club</small>
+            </h1>
+            <h2>What is a HoloBot?</h2>
+            <p>The HoloBots are a team from the <a href="http://techcrunch.com/event-info/disrupt-ny-2016/" target="_blank">2016 TechCrunch Disrupt New York Hackathon</a>. Using the <a href="https://www.microsoft.com/microsoft-hololens/en-us" target="_blank">Microsoft HoloLens</a>, we brought <a href="http://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E" target="_blank">Amazon's Alexa</a> in to the real world.</p>
+
+            <h2>HoloAssist</h2>
+            <h3>The HoloBot Api Engine</h3>
+            <p>
+                Join the club! HoloAssist powers the world's first Artificial Reality Personal Assistant, and now you can use it, too! You can interact with your <a href="https://www.microsoft.com/en-us/outlook-com/" target="_blank">Outlook email</a>, detect emotions and tone with <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/what-is-watson.html" target="_blank">IBM's Watson</a>, and get all your <a href="http://www.hmhco.com/" target="_blank">HMH learning and education resources</a> (with much more to come!).
+            </p>
+            <h3>
+                The Current API
+            </h3>
+            <dl>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/mail" target="_blank">http://holoassist.club/mail</a></pre></dt>
+                <dd>Get your unread mail</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/tone?text=I%20%am%happy" target="_blank">http://holoassist.club/tone?text={text}</a></pre></dt>
+                <dd>Get all available tones and they're scores of passed text (using IBM Watson)</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/tone/top?text=I%20am%20angry" target="_blank">http://holoassist.club/tone/top?text={text}</a></pre></dt>
+                <dd>Get the most likely tone passed text (using IBM Watson)</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/hmh/me" target="_blank">http://holoassist.club/hmh/me</a></pre></dt>
+                <dd>Get all my info as a staff from HMH</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/hmh/mystudents" target="_blank">http://holoassist.club/hmh/mystudents</a></pre></dt>
+                <dd>Get all my students from HMH</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/hmh/myroster" target="_blank">http://holoassist.club/hmh/myroster</a></pre></dt>
+                <dd>Get all my schedule, term, and course info, as a staff, from HMH</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/hmh/mylearningcontent" target="_blank">http://holoassist.club/hmh/mylearningcontent</a></pre></dt>
+                <dd>Get all learning content available to me from HMH</dd>
+                <dt><pre>GET</pre> <pre><a href="http://holoassist.club/hmh/mydocuments" target="_blank">http://holoassist.club/hmh/mydocuments</a></pre></dt>
+                <dd>Get all my documents from HMH</dd>
+            </dl>
+            <p class="footer">Use Holoassist now to get all the information you need from your personal virtual assistant.</p>
+        </div>
+    </div>
+</body>
+
+</html>

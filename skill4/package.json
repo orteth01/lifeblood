@@ -1,0 +1,22 @@
+{
+  "name": "lifeblood",
+  "version": "1.0.0",
+  "description": "techcrunch disrupt NY 2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orteth01/lifeblood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orteth01/lifeblood/issues"
+  },
+  "homepage": "https://github.com/orteth01/lifeblood#readme",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}

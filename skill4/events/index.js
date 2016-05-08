@@ -14,15 +14,11 @@ function onLaunch (launchRequest, session, response) {
     var newSession = {
         state: utils.states.ONE,
     }
-    var options = {
-        url: utils.baseApiUrl + utils.students,
-        form: newSession,
-    }
 
     var output = '';
     var reprompt = '';
 
-    output += 'Which of these do you think your mom will like best?';
+    output += 'Your car is waiting for you. See you at work.';
     response._session = newSession;
 
     return response.tell(output);
