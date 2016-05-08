@@ -45,12 +45,12 @@ router.get("/top", function(req,res,next) {
             else
             {
                 var topTone = {};
-                var limit = tone.document_tone.tone_categories.length;
 
                 tone.document_tone.tone_categories.forEach(function(toneCat)
                 {
                     if (toneCat.category_id == 'emotion_tone'){
                         var rows = 0;
+                        var limit = toneCat.tones.length;
                         toneCat.tones.forEach(function(tone){
                             rows++;
                             if(!topTone.score){
