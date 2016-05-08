@@ -5,6 +5,9 @@ var express = require('express');
 var router = express.Router();
 var outlook = require("node-outlook");
 
+var hardtoken = '';
+var hardemail ='';
+
 function getValueFromCookie(valueName, cookie) {
     if (cookie.indexOf(valueName) !== -1) {
         var start = cookie.indexOf(valueName) + valueName.length + 1;
@@ -15,9 +18,9 @@ function getValueFromCookie(valueName, cookie) {
 }
 
 router.get('/', function(req, res, next) {
-    var token = getValueFromCookie('node-tutorial-token', req.headers.cookie);
+    var token = hardtoken == '' ? getValueFromCookie('node-tutorial-token', req.headers.cookie) : hardtoken;
     console.log("Token found in cookie: ", token);
-    var email = getValueFromCookie('node-tutorial-email', req.headers.cookie);
+    var email = hardemail == '' ? getValueFromCookie('node-tutorial-email', req.headers.cookie) : hardemail;
     console.log("Email found in cookie: ", email);
     if (token) {
         var returnObj = {};
