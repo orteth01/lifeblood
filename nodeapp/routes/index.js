@@ -5,7 +5,7 @@ var authHelper = require("./authHelper");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', authHelper: authHelper });
+  res.render('index', { title: 'HOLOASSIST API', authHelper: authHelper });
 });
 
 module.exports = router;

@@ -1,7 +1,29 @@
 extends layout
 
 block content
-  p
+  //-p
     | Please&nbsp;
     a(href="#{authHelper.getAuthUrl()}") sign in
     |  with your Office 365 or Outlook.com account.
+
+
+  h1 HOLOASSIST.CLUB
+  p
+    | Join the club! Holoassist is a one stop shopping API for all your needs for your holographic assistant. You can interact with your Outlook email, detect emotions and tone with IBM's Watson, and get all your HMH learning and education resources (with much more to come!).
+  p Here are the current endpoints you can use:
+  ul
+    li holoassist.club/mail - get your unread mail
+    li
+      | holoassist.club/tone?text={text} - get all available tones and they're scores of passed text (using IBM Watson)
+    li
+      | holoassist.club/tone/top?text={text} - get the most likely tone passed text (using IBM Watson)
+    li holoassist.club/hmh/me - get all my info as a staff from HMH
+    li holoassist.club/hmh/mystudents - get all my students from HMH
+    li
+      | holoassist.club/hmh/myroster - get all my schedule, term, and course info, as a staff, from HMH
+    li
+      | holoassist.club/hmh/mylearningcontent - get all learning content available to me from HMH
+    li holoassist.club/hmh/mydocuments - get all my documents from HMH
+  p
+    | Use Holoassist now to get all the info you need from your personal virtual assistant.
+  ul
