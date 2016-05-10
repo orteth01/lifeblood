@@ -5,6 +5,10 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -36,7 +40,10 @@ h3 {
 }
 .container {
     margin: 0 auto;
-    max-width: 50em;
+    max-width: 55em;
+}
+li {
+    list-style: disc inside;
 }
 dd {
     margin-left: 3em;
